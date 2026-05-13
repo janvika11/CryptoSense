@@ -186,7 +186,7 @@ Price data is the most direct signal. Sentiment and technicals are supporting si
 
 ---
 
-## 🔮 Future Improvements
+## Future Improvements
 
 - [ ] Real-time LSTM inference on every API call
 - [ ] Twitter/X sentiment integration
@@ -200,12 +200,4 @@ Price data is the most direct signal. Sentiment and technicals are supporting si
 
 ## 👩‍💻 About
 
-Built by **Janvika** — 3rd year CS Engineering student at MLRIT, Hyderabad.
-
-This project was built to apply concepts from Deep Learning (LSTM, RNN, Regularization, Backpropagation) and Data Mining & ML (Random Forest, Naive Bayes, Logistic Regression, K-Means) coursework to a real-world, deployed application.
-
-Previously interned at **CodeUnity Pvt. Ltd.** (built production React Native + Node.js apps) and **Infosys Springboard** (built microservices platform with Spring Boot + Kafka).
-
-📧 janvikankk7@gmail.com
-🔗 [LinkedIn](https://linkedin.com/in/janvika)
-🐙 [GitHub](https://github.com/janvika11)
+Built by **Janvika N** 
