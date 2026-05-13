@@ -5,6 +5,8 @@ import pandas as pd
 import os
 import requests as req
 from dotenv import load_dotenv
+from apscheduler.schedulers.background import BackgroundScheduler
+import atexit
 
 load_dotenv(dotenv_path="../.env")
 
@@ -16,6 +18,21 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+def refresh_all_data():
+    print("Refreshing crypto data...")
+    for coin in ["bitcoin", "ethereum", "solana"]:
+        filename = f"../data/{coin}_365days.csv"
+        if os.path.exists(filename):
+            os.remove(filename)
+            print(f"Deleted old {coin} data — will refresh on next request!")
+
+scheduler = BackgroundScheduler()
+scheduler.add_job(refresh_all_data, "interval", hours=24)
+scheduler.start()
+atexit.register(lambda: scheduler.shutdown())
+
+print("Scheduler started — data refreshes every 24 hours!")
 
 @app.get("/")
 def root():
